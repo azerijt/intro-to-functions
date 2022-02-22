@@ -1,3 +1,4 @@
+/*
 Write a function that, given a list of strings, returns the string which has the greatest character count (including duplicates).
 
 When there are multiple string which are tied for largest character count, return the string that occurs earliest in the list.
@@ -23,9 +24,20 @@ for each string, WORD, in WORDS
 		set LONGEST to WORD
 
 return LONGEST
+*/
 
-test cases:
-===========
-longestInList(["England", "Wales", "Scotland", "Northern Ireland"]) should be "Northern Ireland"
-longestInList(["the", "quick", "brown", "fox"]) should be "quick"
-longestInList(["hello", "hi", "greetings", "hey"]) should be "greetings"
+//test cases:
+
+longestInList(["England", "Wales", "Scotland", "Northern Ireland"]) //should be "Northern Ireland"
+longestInList(["the", "quick", "brown", "fox"]) //should be "quick"
+longestInList(["hello", "hi", "greetings", "hey"]) //should be "greetings"
+
+function longestInList(words){
+	let longest = words[0]
+	for (let word of words){
+		if (word.length > longest.length){
+			longest = word
+		}
+	}
+	return longest
+}
